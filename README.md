@@ -2,7 +2,7 @@
 
 Welcome to the Streamlit Customised Currency Input Field project. This project provides a customised input field for Streamlit applications that is designed to handle large currency values.
 
-![Screenshot of the input field](./Screenshot 2023-07-16 202256.png)
+![Screenshot of the input field](./Screenshot.png)
 
 ## Features
 
