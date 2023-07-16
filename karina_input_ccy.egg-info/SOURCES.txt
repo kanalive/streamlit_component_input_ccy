@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+setup.py
+karina_input_ccy/__init__.py
+karina_input_ccy.egg-info/PKG-INFO
+karina_input_ccy.egg-info/SOURCES.txt
+karina_input_ccy.egg-info/dependency_links.txt
+karina_input_ccy.egg-info/requires.txt
+karina_input_ccy.egg-info/top_level.txt
+karina_input_ccy/frontend/build/asset-manifest.json
+karina_input_ccy/frontend/build/bootstrap.min.css
+karina_input_ccy/frontend/build/index.html
+karina_input_ccy/frontend/build/static/js/main.46b2c0ec.js
+karina_input_ccy/frontend/build/static/js/main.46b2c0ec.js.LICENSE.txt
+karina_input_ccy/frontend/build/static/js/main.46b2c0ec.js.map
