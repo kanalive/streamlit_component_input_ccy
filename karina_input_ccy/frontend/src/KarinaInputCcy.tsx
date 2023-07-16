@@ -15,7 +15,7 @@ interface State {
  * automatically when your component should be re-rendered.
  */
 class KarinaInputCcy extends StreamlitComponentBase<State> {
-  public state = { amount: "0", isFocused: false }
+  public state = { amount: "", isFocused: false }
 
   public render = (): ReactNode => {
     // Arguments that are passed to the plugin in Python are accessible
@@ -59,10 +59,20 @@ class KarinaInputCcy extends StreamlitComponentBase<State> {
   }
 
   private onBlur = (): void => {
+    
     let value = this.state.amount;
+    // Regular expression to only allow numbers, the letters k, m, b, comma, and dollar sign.
+    const pattern = /^[0-9kmb,.$]*$/i;
+
+    // If the value doesn't match the pattern, return without updating state.
+    if (!pattern.test(value)) {
+      return;
+    }
+    
     if (value.endsWith('k')) {
       value = (parseFloat(value) * 1000).toString();
     } else if (value.endsWith('m')) {
+      console.log(value)
       value = (parseFloat(value) * 1000000).toString();
     } else if (value.endsWith('b')) {
       value = (parseFloat(value) * 1000000000).toString();
@@ -75,7 +85,7 @@ class KarinaInputCcy extends StreamlitComponentBase<State> {
       currency: 'USD',
     });
   
-    this.setState({ amount: formatter.format(parseFloat(value)), isFocused: false },
+    this.setState({ amount: formatter.format(parseFloat(value.replace(/[$,]/g, ''))), isFocused: false },
       () => Streamlit.setComponentValue(this.state.amount)
     );
   }
@@ -85,7 +95,9 @@ class KarinaInputCcy extends StreamlitComponentBase<State> {
   }
 
   private onChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    this.setState({ amount: e.target.value });
+    this.setState({ amount: e.target.value },
+      () => Streamlit.setComponentValue(this.state.amount)
+    );
   }
 }
 

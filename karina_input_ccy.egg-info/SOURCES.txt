@@ -11,6 +11,6 @@ karina_input_ccy.egg-info/top_level.txt
 karina_input_ccy/frontend/build/asset-manifest.json
 karina_input_ccy/frontend/build/bootstrap.min.css
 karina_input_ccy/frontend/build/index.html
-karina_input_ccy/frontend/build/static/js/main.234c9460.js
-karina_input_ccy/frontend/build/static/js/main.234c9460.js.LICENSE.txt
-karina_input_ccy/frontend/build/static/js/main.234c9460.js.map
+karina_input_ccy/frontend/build/static/js/main.d6f07fe1.js
+karina_input_ccy/frontend/build/static/js/main.d6f07fe1.js.LICENSE.txt
+karina_input_ccy/frontend/build/static/js/main.d6f07fe1.js.map
