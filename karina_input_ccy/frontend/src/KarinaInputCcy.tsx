@@ -34,11 +34,7 @@ class KarinaInputCcy extends StreamlitComponentBase<State> {
     if (theme) {
       // Use the theme object to style our button border. Alternatively, the
       // theme style is defined in CSS vars.
-      const borderStyling = `1px solid ${
-        this.state.isFocused ? theme.primaryColor : "gray"
-      }`
-      style.border = borderStyling
-      style.outline = borderStyling
+
     }
 
     // Show a button and some text.
@@ -46,10 +42,11 @@ class KarinaInputCcy extends StreamlitComponentBase<State> {
     // variable, and send its new value back to Streamlit, where it'll
     // be available to the Python program.
     return (
-      <span>
+      <span className="input-group-text">
         {label} &nbsp;
         <input type="text" name={name}
           style={style}
+          className="form-control"
           onBlur={this.onBlur}
           onFocus={this.onFocus}
           onChange={this.onChange}
