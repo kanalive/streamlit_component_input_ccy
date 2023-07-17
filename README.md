@@ -32,3 +32,24 @@ amount = kinput.karina_input_ccy(name="test_field", label="Currency Input Field 
 st.write(amount)
 ```
 
+## Extending This Component
+
+### Development
+
+To set the application to development mode, change `_RELEASE` to `False` in the `__init__.py` file found in the `/karina_input_ccy` directory.
+
+To start the web server for the React component, open a command prompt, navigate to your local directory `/karina_input_ccy/frontend`, and enter the command `npm start`.
+
+To start the web server that hosts the Streamlit code for testing changes, open a different command prompt, navigate to your local directory `/karina_input_ccy`, and enter the command `streamlit run __init__.py`.
+
+Modify the `KarinaInputCcy.tsx` file to add more features. Then, you can test your newly implemented functionalities.
+
+### Build
+
+To build the project, first navigate to the `/karina_input_ccy/frontend` directory in a command prompt and enter `npm run build`.
+
+Afterwards, set `_RELEASE` to `True` in the `__init__.py` file under `/karina_input_ccy`.
+
+Next, navigate to the parent directory where the `setup.py` file is located and run the command `python setup.py sdist bdist_wheel`. This will update the `.whl` and `.gz` files in the `dist` folder.
+
+Finally, commit your changes and create a pull request.
